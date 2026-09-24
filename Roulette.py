@@ -49,6 +49,7 @@ def play():
               |   / _ \ || | | / -_)  _|  _/ -_)
               |_|_\___/\_,_| |_\___|\__|\__\___|
              """)
+
         
         red_numbers = [1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36]
         
@@ -79,12 +80,50 @@ def play():
             print(random.choice(lose_messages))
             return 0
 
+    def odd_even():
+        print("""
+                         ___            _     _   _       
+                        | _ \___ _  _  | |___| |_| |_ ___ 
+                        |   / _ \ || | | / -_)  _|  _/ -_)
+                        |_|_\___/\_,_| |_\___|\__|\__\___|
+                       """)
+        print("--You have choosen Odd/even. Welcome--")
+        number = input("Enter the choice of your number type").strip().capitalize()
+        cash_2 = int(input("Enter the amount you need to bet on "))
+        print("The dealer spins the wheel...")
+        time.sleep(1.5)
+        num_2 = random.randint(0,36)
+        print("The ball is bouncing...")
+        time.sleep(1.5)
+        print(f"It landed on {num_2}!") 
+        if num_2== 0:
+            print("You have lost all your money")
+            print(random.choice(lose_messages))
+            return 0
+    
+        elif num_2%2== 0:
+            type_num = "Even"
+        else:
+            type_num= "Odd"
+        if number == type_num:
+            winnings_2 = cash_2*2
+            print(f"Yeahhh,the type of number is {type_num}")
+            print(random.choice(win_messages))
+            print(f"Your price is {winnings_2} $ ")
+            return winnings_2
+        else:
+            print(f"Ohh,the type of number was {type_num}")
+            print(random.choice(lose_messages))
+            return 0   
+
+          
 
     if Bet_type== "Straight up":
         straight_up()
     elif Bet_type== "Red or Black":
         red_black()
-    
+    elif Bet_type== "Odd or even":
+        odd_even()
 play()        
 
 
