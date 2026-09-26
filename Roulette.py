@@ -3,8 +3,7 @@ import time
 
 def play():
     print("\n--- Welcome to the Roulette!Ready to test your luck?! ---")
-    print("Disclamer : All the users should be aware of the rules and the organisation is " \
-    "not respobnsible for financial or any other personal losses")
+   
    
     win_messages = [
     "Beginner's luck? Or are you a pro?",
@@ -161,7 +160,9 @@ def play():
     
     if balance <= 0:
         print("\nYou are completely out of money! The bouncers escort you out of the casino.")
-play()        
+
+if __name__ == "__main__":
+    play()        
 
 
  
